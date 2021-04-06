@@ -10,18 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_03_072812) do
+ActiveRecord::Schema.define(version: 2021_04_04_174253) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "movies", force: :cascade do |t|
-    t.string "title"
-    t.text "text"
-    t.float "ratings"
-    t.integer "category"
+    t.string "title", default: "", null: false
+    t.text "text", default: "", null: false
+    t.float "avg_rating", default: 0.0, null: false
+    t.integer "category", default: 0, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "ratings", force: :cascade do |t|
+    t.integer "value", null: false
+    t.integer "movie_id"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id", "movie_id"], name: "index_ratings_on_user_id_and_movie_id", unique: true
   end
 
   create_table "users", force: :cascade do |t|

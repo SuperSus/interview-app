@@ -25,11 +25,9 @@ class MoviesController < ApplicationController
 
     respond_to do |format|
       if @movie.save
-        format.html { redirect_to @movie, notice: "Movie was successfully created." }
-        format.json { render :show, status: :created, location: @movie }
+        redirect_to @movie, notice: "Movie was successfully created."
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @movie.errors, status: :unprocessable_entity }
+        render :new, status: :unprocessable_entity
       end
     end
   end
@@ -38,11 +36,9 @@ class MoviesController < ApplicationController
   def update
     respond_to do |format|
       if @movie.update(movie_params)
-        format.html { redirect_to @movie, notice: "Movie was successfully updated." }
-        format.json { render :show, status: :ok, location: @movie }
+        redirect_to @movie, notice: "Movie was successfully updated."
       else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @movie.errors, status: :unprocessable_entity }
+        render :edit, status: :unprocessable_entity
       end
     end
   end
@@ -50,10 +46,7 @@ class MoviesController < ApplicationController
   # DELETE /movies/1 or /movies/1.json
   def destroy
     @movie.destroy
-    respond_to do |format|
-      format.html { redirect_to movies_url, notice: "Movie was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    redirect_to movies_url, notice: "Movie was successfully destroyed."
   end
 
   private
@@ -64,6 +57,6 @@ class MoviesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def movie_params
-      params.require(:movie).permit(:title, :text, :ratings, :category)
+      params.require(:movie).permit(:title, :text, :category)
     end
 end
