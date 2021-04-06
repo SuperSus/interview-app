@@ -46,7 +46,7 @@ class MoviesController < ApplicationController
   # DELETE /movies/1 or /movies/1.json
   def destroy
     @movie.destroy
-    redirect_to movies_url, notice: "Movie was successfully destroyed."
+    redirect_to root_url, notice: "Movie was successfully destroyed."
   end
 
   private
