@@ -22,7 +22,7 @@ module ApplicationHelper
 
      def form_movie_button_text
         if current_page? new_movie_path
-          'Create movie'
+          'Add movie'
         else
           'Update movie'
         end
@@ -43,13 +43,5 @@ module ApplicationHelper
       def return_if_not_logged_in css_class
         (content_tag :div, (link_to "Log in", new_user_session_path, class: css_class), class: 'p-2 mr-2') +
         (content_tag :div, (link_to "Register", new_user_registration_path, class: css_class), class: 'p-2 mr-2')
-      end
-
-      def nav_links
-        [
-         {name: "Home", url: root_path},
-         {name: "About", url: ''},
-         {name: "Contact", url: ''}
-        ]
       end
 end

@@ -1,23 +1,19 @@
 <br>
-<div class="container">
-  <div class="row">
-      <div class="col-lg-10">
-        <%= flash_message %>
-        <div id="paginator">
-          <%= paginate @movies %>
-        </div>
-        <div id="paginate">
-          <%= render 'paginate_movies' %>
-        </div>
-        <div id="paginator">
-          <%= paginate @movies %>
-        </div>
-      </div>
-  <br>
-      <div class="col-md-2">
-        <div class="d-flex justify-content-center">
-          <%= button_to 'Create new movie', new_movie_path, method: :get, class: "btn btn-outline-success" %>
-        </div>
-      </div>
+<div class="col-lg-10">
+  <%= flash_message %>
+  <div id="paginator">
+    <%= paginate @movies %>
+  </div>
+  <div id="paginate">
+    <%= render 'paginate_movies' %>
+  </div>
+  <div id="paginator">
+    <%= paginate @movies %>
+  </div>
+</div>
+<br>
+<div class="col-md-2">
+  <div class="d-flex justify-content-center">
+    <%= button_to 'Add new movie', new_movie_path, method: :get, class: "btn btn-outline-success" %>
   </div>
 </div>
