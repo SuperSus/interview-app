@@ -1,34 +1,23 @@
-<h1>Movies</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Text</th>
-      <th>Ratings</th>
-      <th>Category</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @movies.each do |movie| %>
-      <tr>
-        <td><%= movie.title %></td>
-        <td><%= movie.text %></td>
-        <td><%= movie.avg_rating %></td>
-        <td><%= movie.category %></td>
-        <td>
-          <%= render 'shared/star_rating' %>
-        </td>
-        <td><%= link_to 'Show', movie %></td>
-        <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
-        <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
 <br>
-
-<%= link_to 'New Movie', new_movie_path %>
+<div class="container">
+  <div class="row">
+      <div class="col-lg-10">
+        <%= flash_message %>
+        <div id="paginator">
+          <%= paginate @movies %>
+        </div>
+        <div id="paginate">
+          <%= render 'paginate_movies' %>
+        </div>
+        <div id="paginator">
+          <%= paginate @movies %>
+        </div>
+      </div>
+  <br>
+      <div class="col-md-2">
+        <div class="d-flex justify-content-center">
+          <%= button_to 'Create new movie', new_movie_path, method: :get, class: "btn btn-outline-success" %>
+        </div>
+      </div>
+  </div>
+</div>
