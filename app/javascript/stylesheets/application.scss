@@ -1,3 +1,28 @@
 @import '~bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css?family=Merriweather:400,700');
 
+.mt-4 {
+	color: black;
+}
+
+.auth-links a {
+	color: black;
+}
+
+.lead {
+  padding-top: 1.5rem;
+}
+
+.badge-light a {
+	text-overflow: ellipsis;
+	width: 500px;
+}
+
+a:hover{
+text-decoration:none;
+}
+
+.topnav a:hover {
+    border-bottom: 3px solid red;
+}
+

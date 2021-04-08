@@ -10,7 +10,7 @@
   Movie.create(
     {
       title: Faker::Movie.title,
-      text: Faker::Lorem.paragraphs(number: 1)&.first,
+      text: Faker::Lorem.paragraph_by_chars(number: 256, supplemental: false),
       category: Movie::MOVIE_CATEGORIES[rand(9)]
     }
   )
