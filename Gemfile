@@ -34,8 +34,6 @@ gem 'faker', '~> 2.17'
 
 gem 'kaminari', '~> 1.2'
 
-gem 'font-awesome-rails', '~> 4.7'
-
 group :development, :test do
   gem 'rspec-rails'
   gem 'pry'
