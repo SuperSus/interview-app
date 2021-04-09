@@ -1,12 +1,12 @@
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ratingModalCenter">
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ratingModalCenter-<%= movie.id %>">
     Estimate!
 </button>
 
-<div class="modal fade" id="ratingModalCenter" tabindex="-1" role="dialog" aria-labelledby="ratingModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="ratingModalCenter-<%= movie.id %>" tabindex="-1" role="dialog" aria-labelledby="ratingModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle"><%= movie.title %></h5>
       </div>
       <div class="modal-body d-flex justify-content-center align-items-center">
         <div class="btn-group">
