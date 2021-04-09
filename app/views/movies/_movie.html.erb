@@ -1,8 +1,15 @@
-<h1>
-  <div class="auth-links">
-      <%= link_to movie.title, movie_path(movie) %>
+<div class="row">
+  <div class="col-md-10">
+      <h1>
+        <div class="auth-links">
+            <%= link_to movie.title, movie_path(movie) %>
+        </div>
+      </h1>
   </div>
-</h1>
+  <div class="col-md-2">
+    <%= render 'modal_rating', movie: movie %>
+  </div>
+</div>
 <p>Category: <%= movie.category %></p>
 <br>
 <blockquote class="blockquote">
