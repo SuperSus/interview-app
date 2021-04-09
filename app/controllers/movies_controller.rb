@@ -23,23 +23,19 @@ class MoviesController < ApplicationController
   def create
     @movie = Movie.new(movie_params)
 
-    respond_to do |format|
-      if @movie.save
-        redirect_to @movie, notice: "Movie was successfully created."
-      else
-        render :new, status: :unprocessable_entity
-      end
+    if @movie.save
+      redirect_to @movie, notice: "Movie was successfully created."
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
   # PATCH/PUT /movies/1 or /movies/1.json
   def update
-    respond_to do |format|
-      if @movie.update(movie_params)
-        redirect_to @movie, notice: "Movie was successfully updated."
-      else
-        render :edit, status: :unprocessable_entity
-      end
+    if @movie.update(movie_params)
+      redirect_to @movie, notice: "Movie was successfully updated."
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
