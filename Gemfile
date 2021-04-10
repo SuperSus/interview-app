@@ -34,6 +34,8 @@ gem 'faker', '~> 2.17'
 
 gem 'kaminari', '~> 1.2'
 
+gem "stimulus_reflex", "~> 3.4"
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'pry'
@@ -49,5 +51,3 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-
-gem "stimulus_reflex", "~> 3.4"

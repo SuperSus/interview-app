@@ -2,7 +2,7 @@ class MoviesController < ApplicationController
   before_action :set_movie, only: %i[ show edit update destroy ]
 
   def index
-    @movies = Movie.page(params[:page]).per(5)
+    @movies = Movie.order(:id).page(params[:page]).per(5)
   end
 
   def show
