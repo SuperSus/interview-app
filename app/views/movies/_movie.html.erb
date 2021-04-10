@@ -1,35 +1,36 @@
-<div class="row">
-  <div class="col-md-6">
-      <h1>
-        <div class="auth-links">
-            <%= link_to movie.title, movie_path(movie) %>
-        </div>
-      </h1>
-  </div>
-  <div class="col-md-6">
-    <div class="btn-group">
-      <%= reactive_vote_buttons_helper(movie) %>
+<div id="#{movie.id}">
+  <div class="row">
+    <div class="col-md-6">
+        <h1>
+          <div class="auth-links">
+              <%= link_to movie.title, movie_path(movie) %>
+          </div>
+        </h1>
+    </div>
+    <div class="col-md-6">
+      <div class="btn-group">
+        <%= reactive_vote_buttons_helper(movie) %>
+      </div>
     </div>
   </div>
-</div>
-<p>Category: <%= movie.category %></p>
-<br>
-<blockquote class="blockquote">
-  <div class="blockquote-footer">
-    Movie averrage rating: <%= movie.avg_rating.round(2) %>
-  </div>
-</blockquote>
-<p class="lead"><%= movie.text %></p>
+  <p>Category: <%= movie.category %></p>
+  <br>
+  Movie averrage rating: <%= movie.avg_rating.round(2) %>
 
-<div class="footer">
-  Posted <%= distance_of_time_in_words Time.now, movie.created_at %> ago
-</div>
+  <p class="lead"><%= movie.text %></p>
 
-<p>
-  <div class="btn-group">
-    <%= link_to 'edit', edit_movie_path(movie), class: "btn btn-sm btn-outline-secondary" %>
-    <%= link_to 'destroy', movie, method: :delete, class: "btn btn-sm btn-outline-secondary", data: { confirm: 'are you sure?' } %>
-  </div>
-</p>
+  <blockquote class="blockquote">
+    <div class="blockquote-footer">
+      Posted <%= distance_of_time_in_words Time.now, movie.created_at %> ago
+    </div>
+  </blockquote>
+
+  <p>
+    <div class="btn-group">
+      <%= link_to 'edit', edit_movie_path(movie), class: "btn btn-sm btn-outline-secondary" %>
+      <%= link_to 'destroy', movie, method: :delete, class: "btn btn-sm btn-outline-secondary", data: { confirm: 'are you sure?' } %>
+    </div>
+  </p>
+</div>
 
 <hr>
