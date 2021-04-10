@@ -5,7 +5,7 @@ class Movie < ApplicationRecord
 
   enum category: MOVIE_CATEGORIES
 
-  def update_rating
+  def update_avg_rating
     with_lock do
       avg_rating = Rating.where(movie_id: id).average(:value)&.to_f
       update_attribute :avg_rating, avg_rating
