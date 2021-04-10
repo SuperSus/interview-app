@@ -1,14 +1,18 @@
 <br>
 <div class="col-lg-10">
   <%= flash_message %>
-  <div id="paginator">
-    <%= paginate @movies %>
+  <div id="pagtop">
+    <div id="paginator">
+      <%= paginate @movies %>
+    </div>
   </div>
   <div id="paginate">
     <%= render 'paginate_movies' %>
   </div>
-  <div id="paginator">
-    <%= paginate @movies %>
+  <div id="pagfooter">
+    <div id="paginator">
+      <%= paginate @movies %>
+    </div>
   </div>
 </div>
 <br>
