@@ -8,6 +8,16 @@
   )
 end
 
+User.create(
+  {
+    name: 'Funny Kaplan',
+    email: 'admin@example.com',
+    password: '123123',
+    password_confirmation: '123123',
+    roles: :admin
+  }
+)
+
 5.times do
   User.create(
     {

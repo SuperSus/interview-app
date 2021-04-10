@@ -38,6 +38,8 @@ gem "stimulus_reflex", "~> 3.4"
 
 gem 'friendly_id', '~> 5.4.0'
 
+gem 'petergate', '~> 2.0'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'pry'

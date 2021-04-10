@@ -13,4 +13,8 @@ module CurrentUserConcern
     guest.email= "guest@example.com"
     guest
   end
+
+  def roles
+    []
+  end
 end

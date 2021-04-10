@@ -9,7 +9,9 @@
     </div>
     <div class="col-md-6">
       <div class="btn-group">
-        <%= reactive_vote_buttons_helper(movie) %>
+        <% unless current_user.is_a?(GuestUser) %>
+          <%= reactive_vote_buttons_helper(movie) %>
+        <% end %>
       </div>
     </div>
   </div>
@@ -26,10 +28,12 @@
   </blockquote>
 
   <p>
-    <div class="btn-group">
-      <%= link_to 'edit', edit_movie_path(movie), class: "btn btn-sm btn-outline-secondary" %>
-      <%= link_to 'destroy', movie, method: :delete, class: "btn btn-sm btn-outline-secondary", data: { confirm: 'are you sure?' } %>
-    </div>
+    <% if logged_in?(:admin) %>
+      <div class="btn-group">
+        <%= link_to 'edit', edit_movie_path(movie), class: "btn btn-sm btn-outline-secondary" %>
+        <%= link_to 'destroy', movie, method: :delete, class: "btn btn-sm btn-outline-secondary", data: { confirm: 'are you sure?' } %>
+      </div>
+    <% end %>
   </p>
 </div>
 

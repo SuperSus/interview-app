@@ -50,7 +50,7 @@ module ApplicationHelper
   private
 
   def return_if_logged_in css_class
-    (content_tag :div, link_to("You are #{current_user.first_name}", edit_user_registration_path, class: css_class), class: 'p-2 mr-2') +
+    (content_tag :span, "You are #{current_user.first_name}", class: css_class + 'p-2 mr-2') +
     (content_tag :div, link_to("Log out", destroy_user_session_path, method: :delete, class: css_class), class: 'p-2 mr-2')
   end
 

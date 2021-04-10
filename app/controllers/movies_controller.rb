@@ -1,4 +1,5 @@
 class MoviesController < ApplicationController
+  access all: [:show, :index], admin: :all
   before_action :set_movie, only: %i[ show edit update destroy ]
 
   def index

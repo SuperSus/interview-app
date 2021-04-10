@@ -4,7 +4,7 @@ class Movie < ApplicationRecord
   MOVIE_CATEGORIES = %i[comedy horror detective action family crime thriller western fantasy history]
   enum category: MOVIE_CATEGORIES
 
-  has_many :ratings, dependent: :destroy
+  has_many :ratings
   friendly_id :title, use: :slugged
 
   def update_avg_rating
