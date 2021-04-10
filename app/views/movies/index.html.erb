@@ -1,6 +1,5 @@
 <br>
 <div class="col-lg-10">
-  <%= flash_message %>
   <div id="pagtop">
     <div id="paginator">
       <%= paginate @movies %>
@@ -18,6 +17,10 @@
 <br>
 <div class="col-md-2">
   <div class="d-flex justify-content-center">
-    <%= button_to 'Add new movie', new_movie_path, method: :get, class: "btn btn-outline-success" %>
+    <p><%= button_to 'Add new movie', new_movie_path, method: :get, class: "btn btn-outline-success" %></p>
+  </div>
+  <br>
+  <div class="d-flex justify-content-center">
+    <p><%= flash_message %></p>
   </div>
 </div>

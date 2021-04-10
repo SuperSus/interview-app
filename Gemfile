@@ -36,6 +36,8 @@ gem 'kaminari', '~> 1.2'
 
 gem "stimulus_reflex", "~> 3.4"
 
+gem 'friendly_id', '~> 5.4.0'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'pry'
