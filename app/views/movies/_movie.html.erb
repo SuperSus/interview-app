@@ -8,27 +8,15 @@
   </div>
   <div class="col-md-6">
     <div class="btn-group">
-      <%= link_to "1", nil, { class: "btn btn-outline-success mr-2", data: { reflex: "click->ExampleReflex#update_rating", movie_id: movie.id,  value: 1 } } %>
-      <%= link_to "2", nil, { class: "btn btn-outline-success mr-2", data: { reflex: "click->ExampleReflex#update_rating", movie_id: movie.id,  value: 2 } } %>
-      <%= link_to "3", nil, { class: "btn btn-outline-success mr-2", data: { reflex: "click->ExampleReflex#update_rating", movie_id: movie.id,  value: 3 } } %>
-      <%= link_to "4", nil, { class: "btn btn-outline-success mr-2", data: { reflex: "click->ExampleReflex#update_rating", movie_id: movie.id,  value: 4 } } %>
-      <%= link_to "5", nil, { class: "btn btn-outline-success mr-2", data: { reflex: "click->ExampleReflex#update_rating", movie_id: movie.id,  value: 5 } } %>
-      <%= link_to "6", nil, { class: "btn btn-outline-success mr-2", data: { reflex: "click->ExampleReflex#update_rating", movie_id: movie.id,  value: 6 } } %>
-      <%= link_to "7", nil, { class: "btn btn-outline-success mr-2", data: { reflex: "click->ExampleReflex#update_rating", movie_id: movie.id,  value: 7 } } %>
-      <%= link_to "8", nil, { class: "btn btn-outline-success mr-2", data: { reflex: "click->ExampleReflex#update_rating", movie_id: movie.id,  value: 8 } } %>
-      <%= link_to "9", nil, { class: "btn btn-outline-success mr-2", data: { reflex: "click->ExampleReflex#update_rating", movie_id: movie.id,  value: 9 } } %>
-      <%= link_to "10", nil, { class: "btn btn-outline-success mr-2", data: { reflex: "click->ExampleReflex#update_rating", movie_id: movie.id,  value: 10 } } %>
+      <%= reactive_vote_buttons_helper(movie) %>
     </div>
   </div>
-  <%#<div class="col-md-2">%>
-    <%#<%= render 'modal_rating', movie: movie %>
-  <%#</div>%>
 </div>
 <p>Category: <%= movie.category %></p>
 <br>
 <blockquote class="blockquote">
   <div class="blockquote-footer">
-    Movie averrage rating: <%=movie.avg_rating%>
+    Movie averrage rating: <%= movie.avg_rating.round(2) %>
   </div>
 </blockquote>
 <p class="lead"><%= movie.text %></p>

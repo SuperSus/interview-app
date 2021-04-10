@@ -10,27 +10,7 @@
       </div>
       <div class="modal-body d-flex justify-content-center align-items-center">
         <div class="btn-group">
-          <%= link_to "0", '#', { class: "btn btn-outline-success mr-2", data: {dismiss: "modal"}, remote: true } %>
-          <%= link_to "0", '#', { class: "btn btn-outline-success mr-2", data: {dismiss: "modal"}, remote: true } %>
-          <%= link_to "0", '#', { class: "btn btn-outline-success mr-2", data: {dismiss: "modal"}, remote: true } %>
-          <%= link_to "0", '#', { class: "btn btn-outline-success mr-2", data: {dismiss: "modal"}, remote: true } %>
-          <%= link_to "0", '#', { class: "btn btn-outline-success mr-2", data: {dismiss: "modal"}, remote: true } %>
-          <%= link_to "0", '#', { class: "btn btn-outline-success mr-2", data: {dismiss: "modal"}, remote: true } %>
-          <%= link_to "0", '#', { class: "btn btn-outline-success mr-2", data: {dismiss: "modal"}, remote: true } %>
-          <%= link_to "0", '#', { class: "btn btn-outline-success mr-2", data: {dismiss: "modal"}, remote: true } %>
-          <%= link_to "0", '#', { class: "btn btn-outline-success mr-2", data: {dismiss: "modal"}, remote: true } %>
-          <%= link_to "0", '#', { class: "btn btn-outline-success mr-2", data: {dismiss: "modal"}, remote: true } %>
-          <%= link_to "0", '#', { class: "btn btn-outline-success mr-2", data: {dismiss: "modal"}, remote: true } %>
-          <button type="button" class="btn btn-outline-success mr-2" data-dismiss="modal">1</button>
-          <button type="button" class="btn btn-outline-success mr-2" data-dismiss="modal">2</button>
-          <button type="button" class="btn btn-outline-success mr-2" data-dismiss="modal">3</button>
-          <button type="button" class="btn btn-outline-success mr-2" data-dismiss="modal">4</button>
-          <button type="button" class="btn btn-outline-success mr-2" data-dismiss="modal">5</button>
-          <button type="button" class="btn btn-outline-success mr-2" data-dismiss="modal">6</button>
-          <button type="button" class="btn btn-outline-success mr-2" data-dismiss="modal">7</button>
-          <button type="button" class="btn btn-outline-success mr-2" data-dismiss="modal">8</button>
-          <button type="button" class="btn btn-outline-success mr-2" data-dismiss="modal">9</button>
-          <button type="button" class="btn btn-outline-success mr-2" data-dismiss="modal">10</button>
+          <%= reactive_vote_buttons_helper(movie) %>
         </div>
       </div>
       <div class="modal-footer">
