@@ -1,0 +1,9 @@
+<%= form_for :query, url: root_path, method: :get do |form| %>
+  <div class="field">
+    <%= form.label :category %>
+    <%= form.select :category, Movie::MOVIE_CATEGORIES, include_blank: true, selected: params.dig('query', 'category') %>
+  </div>
+  <div class="actions" style="margin-top: 1rem">
+    <%= form.submit 'Filter', class: "btn btn-success" %>
+  </div>
+<% end  %>

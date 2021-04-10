@@ -2,7 +2,14 @@ class MoviesController < ApplicationController
   before_action :set_movie, only: %i[ show edit update destroy ]
 
   def index
-    @movies = Movie.order(:id).page(params[:page]).per(5)
+    category = query_params[:category]
+    scope = if Movie::MOVIE_CATEGORIES.include?(category&.to_sym)
+              Movie.send(category)
+            else
+              Movie.all
+            end
+
+    @movies = scope.order(:id).page(params[:page]).per(5)
   end
 
   def show
@@ -45,5 +52,10 @@ class MoviesController < ApplicationController
 
     def movie_params
       params.require(:movie).permit(:title, :text, :category)
+    end
+
+    def query_params
+      query_params = params[:query]
+      query_params ? query_params.permit(:category) : {}
     end
 end

@@ -2,12 +2,10 @@ class Movie < ApplicationRecord
   extend FriendlyId
 
   MOVIE_CATEGORIES = %i[comedy horror detective action family crime thriller western fantasy history]
+  enum category: MOVIE_CATEGORIES
 
   has_many :ratings, dependent: :destroy
-
   friendly_id :title, use: :slugged
-
-  enum category: MOVIE_CATEGORIES
 
   def update_avg_rating
     with_lock do
