@@ -16,7 +16,7 @@ class User < ApplicationRecord
   has_many :ratings, dependent: :destroy
 
   validates_format_of :name, with: /\A[^0-9`!@#\$%\^&*+_=]+\z/
-
+  # OPTIONAl: use two separate columns (first_name, last_name) instead of 'name'
   def first_name
     self.name.split.first
   end
